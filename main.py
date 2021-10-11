@@ -1,7 +1,6 @@
 import sys, time, subprocess, argparse, logging
 from os import remove, listdir, makedirs
 from os.path import isfile, join, exists
-from pygifsicle import optimize
 from PIL import Image
 from time import sleep
 
@@ -70,7 +69,6 @@ def main():
             name = name.replace(".webp", ".gif")
             try:
                 im.save(name, save_all=True)
-                optimize(name)
                 if deletion:
                     remove(image)
             except Exception as e:
